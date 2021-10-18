@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyeon.mapper.BookMapper">
+	<insert id="insertBook">
+		<selectKey resultType="int" keyProperty="num" order="BEFORE">
+			select book_seq.nextval from dual
+		</selectKey>
+		insert into book values(#{num},#{loc},#{room},#{email},#{bdate},#{btime},1)
+	</insert>
+	
+	<update id="updateBook">
+		update book
+		<set>
+			<if test="loc != null and loc != ''">
+				loc=#{loc},
+			</if>
+			<if test="room != null and room != ''">
+				room=#{room},
+			</if>
+			<if test="bdate != null and bdate != ''">
+				bdate=#{bdate},
+			</if>
+			<if test="btime != null and btime != ''">
+				btime=#{btime},
+			</if>
+			<if test="status != null and status != ''">
+				status=#{status}
+			</if>
+		</set>
+		where num=#{num}
+	</update>
+	
+	<select id="selectBook" resultType="Book">
+		select * from book where email=#{email}
+	</select>
+	
+	<select id="selectBookList" resultType="Book">
+		select * from book order by num desc
+	</select>
+</mapper>
