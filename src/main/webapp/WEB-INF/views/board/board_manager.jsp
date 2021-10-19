@@ -46,6 +46,7 @@
              		<textarea id="updateContent" name="content" class="update" cols=50 rows=10 style="margin-bottom: 40px; resize: none; border: 1px solid #E6E7EC;"></textarea><br>
              		<div style="text-align: center">
              			<button id="board_update_btn" type="button" style="width: 130px; height: 40px; background-color: black; color: white; outline: none; border: 0; border-radius: 5px;">변경하기</button>
+             			<button id="update_cancel_btn" type="button" style="width: 130px; height: 40px; background-color: black; color: white; outline: none; border: 0; border-radius: 5px;">취소</button>
              		</div>
                	</form>
             </div>
@@ -259,5 +260,12 @@
 				alert("에러코드 = " + xhr.status);
 			}
 		});
+	});
+	
+	$("#update_cancel_btn").click(function() {
+		$("#board").show();
+		$(".page_wrap").show();
+		$("#board_form").hide();
+		boardDisplay(page);
 	});
 </script>

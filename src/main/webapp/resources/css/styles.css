@@ -11290,9 +11290,9 @@ textarea.form-control-lg {
 header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url("../images/bg-masthead.jpg") no-repeat center center;
+  background: url("../images/main_bg.png") no-repeat center center;
   background-size: cover;
-  padding-top: 8rem;
+  padding-top: 16rem;
   padding-bottom: 8rem;
 }
 header.masthead-login {
@@ -11303,6 +11303,7 @@ header.masthead-login {
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
+/*
 header.masthead:before {
   content: "";
   position: absolute;
@@ -11313,6 +11314,8 @@ header.masthead:before {
   left: 0;
   opacity: 0.5;
 }
+*/
+
 header.masthead h1, header.masthead .h1 {
   font-size: 2rem;
 }
@@ -11362,7 +11365,7 @@ header.masthead h1, header.masthead .h1 {
 .call-to-action {
   position: relative;
   background-color: #343a40;
-  background: url("../images/bg-masthead.jpg") no-repeat center center;
+  background: url("../images/main_bg.png") no-repeat center center;
   background-size: cover;
   padding-top: 7rem;
   padding-bottom: 7rem;
